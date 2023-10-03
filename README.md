@@ -7,7 +7,7 @@ Selamat datang di profil GitHub resmi capstone project Geesix Commerce. Ini adal
 
 # Our Team
 - Ketut Ferio Rizky Ardana - Project Leader & Frontend Engineer (https://github.com/rioardana)
-- Suci Siti Zakiyah - Frontend Engineer ()
+- Suci Siti Zakiyah - Frontend Engineer (https://github.com/sucisitizakiyah)
 - Azzahra Putri Maharani - Backend Engineer (https://github.com/AzzahraPutriM)
 - Fransiska Liska Bhanda Kiuk - Backend Engineer (https://github.com/Liskakiuk)
 - Adimas Raihan Haryobimo - Quality Assurance ()
@@ -24,7 +24,10 @@ Geesix Commerce adalah sebuah platform e-commerce yang menghubungkan penjual dan
 - [Express.js](https://expressjs.com/)
 - [API](https://)
 - [Javascript](https://javascript.com/)
-- [Express.js](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- [Body-parser](https://www.npmjs.com/package/body-parser)
+- [Dotenv](https://www.dotenv.org/)
+- [EJS (Embedded Javasctipt)](https://ejs.co/)
 
 # Progres Backend Project
 Untuk melihat perkembangan bagian Backend Capstone Project di [Tautan ini](https://github.com/Kampus-Merdeka-Software-Engineering/back-end-capstone-project-section-semarang-group-6.git).
