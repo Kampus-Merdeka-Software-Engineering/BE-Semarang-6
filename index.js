@@ -11,6 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Middleware for handling errors to applications
 app.use(errorHandler);
 
+// Define models and relationships
+db.sequelize.sync().then(() => {
+  console.log('Tabel berhasil dibuat.');
+});
+
 // Middleware for contact form input validation
 function validateFeedback(req, res, next) {
   const { name, email, subject, message } = req.body;
@@ -71,7 +76,7 @@ app.get("/home", (req, res) => {
   res.json(homeData);
 });
 
-// Endpoint for "about us" page
+/// Endpoint for "about us" page
 app.get("/about", (req, res) => {
   const aboutData = {
     title: 'About Us',
@@ -87,15 +92,6 @@ app.get("/about", (req, res) => {
   res.json(aboutData);
 });
 
-
-// Endpoint for "contact" page
-app.get("/contact", (req, res) => {
-  const contactData = {
-    message: 'Hubungi kami melalui email di infogeesix@gmail.com.',
-  };
-  res.json(contactData);
-});
-
 // Endpoint for "our team" page
 app.get("/ourteam", (req, res) => {
   const ourTeamData = {
@@ -109,6 +105,14 @@ app.get("/ourteam", (req, res) => {
     ],
   };
   res.json(ourTeamData);
+});
+
+// Endpoint for "contact" page
+app.get("/contact", (req, res) => {
+  const contactData = {
+    message: 'Hubungi kami melalui email di infogeesix@gmail.com.',
+  };
+  res.json(contactData);
 });
 
 // Endpoint for root URL ("/")
