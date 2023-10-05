@@ -5,23 +5,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const db = require("./db/index.js");
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Middleware for handling errors to applications
 app.use(errorHandler);
-
-// Geesix commerce company profile data
-const companyProfile = {
-  companyName: 'Geesix Commerce',
-  description: 'Kami adalah perusahaan e-commerce yang menyediakan berbagai produk dan layanan berkualitas.',
-  address: 'Senayan, Kebayoran Baru, South Jakarta City, Jakarta, Indonesia',
-  phone: '(+62) 123-4567',
-  email: 'infogeesix@gmail.com',
-};
 
 // Middleware for contact form input validation
 function validateFeedback(req, res, next) {
@@ -69,36 +57,58 @@ app.get("/api/feedback", async (req, res) => {
   }
 });
 
-
 // Middleware for error handling
 function errorHandler(err, req, res, next) {
   console.error(err.stack);
   res.status(500).json({ error: 'Terjadi kesalahan pada server.' });
 }
 
-// Endpoint to get company profile
-app.get("/companyprofile", (req, res) => {
-  res.render('companyprofile', { companyProfile });
-});
-
 // Endpoint for "home" page
 app.get("/home", (req, res) => {
-  res.render('home', { message: 'Selamat datang di halaman utama Geesix Commerce' });
+  const homeData = {
+    message: 'Selamat datang di halaman utama Geesix Commerce',
+  };
+  res.json(homeData);
 });
 
-// Endpoint for "about" page
+// Endpoint for "about us" page
 app.get("/about", (req, res) => {
-  res.render('about');
+  const aboutData = {
+    title: 'About Us',
+    description: 'Ini adalah halaman tentang perusahaan Geesix Commerce.',
+    companyProfile: {
+      companyName: 'Geesix Commerce',
+      description: 'Kami adalah perusahaan e-commerce yang menyediakan berbagai produk dan layanan berkualitas.',
+      address: 'Senayan, Kebayoran Baru, South Jakarta City, Jakarta, Indonesia',
+      phone: '(+62) 123-4567',
+      email: 'infogeesix@gmail.com',
+    },
+  };
+  res.json(aboutData);
 });
+
 
 // Endpoint for "contact" page
 app.get("/contact", (req, res) => {
-  res.render('contact');
+  const contactData = {
+    message: 'Hubungi kami melalui email di infogeesix@gmail.com.',
+  };
+  res.json(contactData);
 });
 
 // Endpoint for "our team" page
 app.get("/ourteam", (req, res) => {
-  res.render('ourteam', { ourTeam });
+  const ourTeamData = {
+    teamMembers: [
+      { name: 'Ketut Ferio Rizky Ardana', position: 'Project Leader & Front-end Engineer' },
+      { name: 'Suci Siti Zakiyah', position: 'Front-end Engineer' },
+      { name: 'Azzahra Putri Maharani', position: 'Back-end Engineer' },
+      { name: 'Fransiska Liska Bhanda Kiuk', position: 'Back-end Engineer' },
+      { name: 'Adimas Raihan Haryobimo', position: 'Quality Assurance' },
+      { name: 'Hilda Marsya Dwi Ananda', position: 'Quality Assurance' },
+    ],
+  };
+  res.json(ourTeamData);
 });
 
 // Endpoint for root URL ("/")
