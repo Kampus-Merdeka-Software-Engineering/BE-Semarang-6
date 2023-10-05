@@ -15,7 +15,7 @@ function validateFeedback(req, res, next) {
 router.post("/proses_feedback", validateFeedback, async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
-    // Save feedback to database using Sequel model
+    // Save feedback to database using Sequelize model
     await db.Feedback.create({ name, email, subject, message });
     res.status(201).json({ message: 'Feedback berhasil disimpan.' });
   } catch (error) {
