@@ -4,6 +4,7 @@ const port = 3000;
 const path = require('path');
 const bodyParser = require('body-parser');
 const db = require("./db/index.js");
+const cors = require('cors');
 
 const dbConfig = require('./db/config.js');
 const Sequelize = require('sequelize');
@@ -15,6 +16,8 @@ const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.p
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 // Middleware for handling errors to applications
 app.use(errorHandler);
