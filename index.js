@@ -5,6 +5,14 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const db = require("./db/index.js");
 
+const dbConfig = require('./db/config.js');
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
+  host: dbConfig.host,
+  port: dbConfig.port,
+  dialect: dbConfig.dialect,
+});
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
