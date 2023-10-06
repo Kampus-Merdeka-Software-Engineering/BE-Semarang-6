@@ -34,4 +34,4 @@ Untuk melihat perkembangan bagian Backend Capstone Project di [Tautan ini](https
 
 # Links
 Untuk mengakses situs dapat mengklik tautan dibawah ini:
-- Github: https://kampus-merdeka-software-engineering.github.io/front-end-capstone-project-section-semarang-group-6/
+- Github: https://kampus-merdeka-software-engineering.github.io/FE-Semarang-6/
