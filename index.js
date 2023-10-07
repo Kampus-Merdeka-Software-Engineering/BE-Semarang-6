@@ -44,7 +44,6 @@ app.post("/proses_feedback", validateFeedback, async (req, res) => {
     await db.Feedback.create({ name, email, subject, message });
     res.status(201).json({ message: 'Feedback berhasil disimpan.' });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Terjadi kesalahan pada server.' });
   }
 });
@@ -56,7 +55,6 @@ app.get("/proses_feedback", async (req, res) => {
     const feedbackData = await db.Feedback.findAll();
     res.status(200).json(feedbackData);
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Terjadi kesalahan pada server.' });
   }
 });
@@ -68,14 +66,12 @@ app.get("/api/feedback", async (req, res) => {
     const feedbackData = await db.Feedback.findAll();
     res.status(200).json(feedbackData);
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Terjadi kesalahan pada server.' });
   }
 });
 
 // Middleware for error handling
 function errorHandler(err, req, res, next) {
-  console.error(err.stack);
   res.status(500).json({ error: 'Terjadi kesalahan pada server.' });
 }
 
