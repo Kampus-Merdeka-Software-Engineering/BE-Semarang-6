@@ -27,7 +27,6 @@ Geesix Commerce adalah sebuah platform e-commerce yang menghubungkan penjual dan
 - [Sequelize](https://sequelize.org/)
 - [Body-parser](https://www.npmjs.com/package/body-parser)
 - [Dotenv](https://www.dotenv.org/)
-- [EJS (Embedded Javasctipt)](https://ejs.co/)
 
 # Progres Backend Project
 Untuk melihat perkembangan bagian Backend Capstone Project di [Tautan ini](https://github.com/Kampus-Merdeka-Software-Engineering/back-end-capstone-project-section-semarang-group-6.git).
